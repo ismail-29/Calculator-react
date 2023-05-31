@@ -64,6 +64,8 @@ const Calculator = () => {
       <button id="zero" className="btn" onClick={() => handleClick("0")}>
         0
       </button>
+      <div className="coloum">
+
       <button id="one" className="btn" onClick={() => handleClick("1")}>
         1
       </button>
@@ -73,6 +75,11 @@ const Calculator = () => {
       <button id="three" className="btn" onClick={() => handleClick("3")}>
         3
       </button>
+      <button id="add" className="btn" onClick={() => handleClick("+")}>
+        +
+      </button>
+      </div>
+      <div className="coloum">
       <button id="four" className="btn" onClick={() => handleClick("4")}>
         4
       </button>
@@ -82,6 +89,11 @@ const Calculator = () => {
       <button id="six" className="btn" onClick={() => handleClick("6")}>
         6
       </button>
+      <button id="subtract" className="btn" onClick={() => handleClick("-")}>
+        -
+      </button>
+      </div>
+      <div className="coloum">
       <button id="seven" className="btn" onClick={() => handleClick("7")}>
         7
       </button>
@@ -91,15 +103,11 @@ const Calculator = () => {
       <button id="nine" className="btn" onClick={() => handleClick("9")}>
         9
       </button>
-      <button id="add" className="btn" onClick={() => handleClick("+")}>
-        +
-      </button>
-      <button id="subtract" className="btn" onClick={() => handleClick("-")}>
-        -
-      </button>
       <button id="multiply" className="btn" onClick={() => handleClick("*")}>
         *
       </button>
+      </div>
+      
       <button id="divide" className="btn" onClick={() => handleClick("/")}>
         /
       </button>
