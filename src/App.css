@@ -23,22 +23,33 @@
 .btn {
   padding: 10px;
   font-size: 18px;
-  background-color: #f5f5f5;
+  background-color: #e88989;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #e0e0e0;
+  background-color: #f2f1be;
 }
 
 .btn:active {
-  background-color: #d3d3d3;
+  background-color: #9fa779;
 }
 
 @media screen and (max-width: 400px) {
   .calculator {
     max-width: 100%;
   }
+}
+
+.coloum{
+  margin-left: 30px;
+}
+.btn{
+  margin: 10px;
+  
+}
+.hero--ac{
+  margin-left: 23%;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './App.css';
 
+
 const Calculator = () => {
   const [display, setDisplay] = useState("0");
   const [isOperatorClicked, setIsOperatorClicked] = useState(false);
@@ -49,71 +50,90 @@ const Calculator = () => {
     }
   };
 
+  const handleDelete = () => {
+    if (display.length > 0) {
+      const newDisplay = display.slice(0, -1);
+      setDisplay(newDisplay);
+    }
+  };
+
+  const handlePercentage = () => {
+    try {
+      const result = parseFloat(display) / 100;
+      setDisplay(result.toString());
+    } catch (error) {
+      setDisplay("Error");
+    }
+  };
+
   return (
     <div className="calculator">
-
       <div id="display" className="display">
         {display}
       </div>
-      <button id="clear" className="btn" onClick={handleClear}>
-        AC
+      <button id="clear" className="btn hero--ac btn-danger" onClick={handleClear}>
+        clear
       </button>
-      <button id="equals" className="btn" onClick={handleEquals}>
-        =
-      </button>
-      <button id="zero" className="btn" onClick={() => handleClick("0")}>
-        0
-      </button>
+      <button id="delete" className="btn btn-warning" onClick={handleDelete}>
+          Delete
+        </button>
       <div className="coloum">
-
-      <button id="one" className="btn" onClick={() => handleClick("1")}>
-        1
-      </button>
-      <button id="two" className="btn" onClick={() => handleClick("2")}>
-        2
-      </button>
-      <button id="three" className="btn" onClick={() => handleClick("3")}>
-        3
-      </button>
-      <button id="add" className="btn" onClick={() => handleClick("+")}>
-        +
-      </button>
+        <button id="one" className="btn" onClick={() => handleClick("1")}>
+          1
+        </button>
+        <button i="two" className="btn" onClick={() => handleClick("2")}>
+          2
+        </button>
+        <button id="three" className="btn" onClick={() => handleClick("3")}>
+          3
+        </button>
+        <button id="add" className="btn" onClick={() => handleClick("+")}>
+          +
+        </button>
+      </div>
+      <div className="coloum center">
+        <button id="four" className="btn" onClick={() => handleClick("4")}>
+          4
+        </button>
+        <button id="five" className="btn" onClick={() => handleClick("5")}>
+          5
+        </button>
+        <button id="six" className="btn" onClick={() => handleClick("6")}>
+          6
+        </button>
+        <button id="subtract" className="btn" onClick={() => handleClick("-")}>
+          -
+        </button>
       </div>
       <div className="coloum">
-      <button id="four" className="btn" onClick={() => handleClick("4")}>
-        4
-      </button>
-      <button id="five" className="btn" onClick={() => handleClick("5")}>
-        5
-      </button>
-      <button id="six" className="btn" onClick={() => handleClick("6")}>
-        6
-      </button>
-      <button id="subtract" className="btn" onClick={() => handleClick("-")}>
-        -
-      </button>
+        <button id="seven" className="btn" onClick={() => handleClick("7")}>
+          7
+        </button>
+        <button id="eight" className="btn" onClick={() => handleClick("8")}>
+          8
+        </button>
+        <button id="nine" className="btn" onClick={() => handleClick("9")}>
+          9
+        </button>
+        <button id="divide" className="btn" onClick={() => handleClick("/")}>
+          /
+        </button>
       </div>
       <div className="coloum">
-      <button id="seven" className="btn" onClick={() => handleClick("7")}>
-        7
-      </button>
-      <button id="eight" className="btn" onClick={() => handleClick("8")}>
-        8
-      </button>
-      <button id="nine" className="btn" onClick={() => handleClick("9")}>
-        9
-      </button>
-      <button id="multiply" className="btn" onClick={() => handleClick("*")}>
-        *
-      </button>
+        <button id="decimal" className="btn" onClick={handleDecimal}>
+          .
+        </button>
+        <button id="zero" className="btn" onClick={() => handleClick("0")}>
+          0
+        </button>
+        <button id="percentage" className="btn" onClick={handlePercentage}>
+          %
+        </button>
+        <button id="equals" className="btn btn-success" onClick={handleEquals}>
+          =
+        </button>
+        
       </div>
-      
-      <button id="divide" className="btn" onClick={() => handleClick("/")}>
-        /
-      </button>
-      <button id="decimal" className="btn" onClick={handleDecimal}>
-        .
-      </button>
     </div>
   );
 };
