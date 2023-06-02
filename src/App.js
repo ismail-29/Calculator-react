@@ -35,7 +35,6 @@ const Calculator = () => {
       setDisplay(display + ".");
     }
   };
-
   const handleOperator = (operator) => {
     if (!isOperatorClicked) {
       setDisplay(display + operator);
