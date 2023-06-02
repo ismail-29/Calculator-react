@@ -29,14 +29,6 @@
   cursor: pointer;
 }
 
-.btn:hover {
-  background-color: #f2f1be;
-}
-
-.btn:active {
-  background-color: #9fa779;
-}
-
 @media screen and (max-width: 400px) {
   .calculator {
     max-width: 100%;
